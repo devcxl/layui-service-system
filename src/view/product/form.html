@@ -1,0 +1,29 @@
+<!--
+Created By devcxl
+-->
+
+<div class="layui-form" lay-filter="product-view-from" style="margin-top: 30px">
+    <div class="layui-form-item">
+        <label class="layui-form-label">ID</label>
+        <div class="layui-input-inline">
+            <input type="text" name="id" id="id" autocomplete="off" class="layui-input">
+        </div>
+        <label class="layui-form-label">名称</label>
+        <div class="layui-input-inline">
+            <input type="text" name="name" required lay-verify="required" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">父id</label>
+        <div class="layui-input-inline">
+            <input type="text" name="pid" required lay-verify="required|pid" autocomplete="off" class="layui-input">
+        </div>
+
+    </div>
+
+    <div class="layui-form-item" id="admins-form-div-submit">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="product-submit">立即提交</button>
+        </div>
+    </div>
+</div>

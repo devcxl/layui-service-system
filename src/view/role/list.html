@@ -1,0 +1,18 @@
+<!--
+Created By devcxl
+Date: 2020/5/22 下午6:55
+-->
+<div class="layui-fluid">
+    <div class="layui-card" style="margin-top: 10px;">
+        <div class="layui-card-body">
+            <table id="roles-table" lay-filter="roles-table"></table>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="role-tools">
+    <div class="layui-inline" title="点击重置" lay-event="Re"><i class="layui-icon">&#xe669;</i></div>
+    <div class="layui-inline" title="点击添加" lay-event="Add"><i class="layui-icon">&#xe624;</i></div>
+</script>
+<script>
+    layui.use('role',layui.factory('role'))
+</script>

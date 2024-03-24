@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Loading...</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+</head>
+<body class="layui-layout-body">
+
+</body>
+<script src="layui/layui.js"></script>
+<script id="template-body" type="text/html">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo"><a class="layui-icon"></a></div>
+            <div class="layui-logo">{{ "服务系统"}}</div>
+            <!-- 头部区域（可配合layui已有的水平导航） -->
+            <ul class="layui-nav layui-layout-left layui-hide-xs">
+                <li class="layui-nav-item">{{d.data.user.companyName || ''}}</li>
+            </ul>
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="javascript:">
+                        <img id="headImg" class="layui-nav-img">
+                        <span class="layui-hide-xs">{{d.data.user.name || d.data.user.username}}</span>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="#/repass">安全设置</a></dd>
+                        <dd><a href="#/logout">退出系统</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!--侧边菜单-->
+                <ul class="layui-nav layui-nav-tree">
+                    {{# layui.each(d.data.permissions, function(index, item){ }}
+                    {{# if(!item.permissions){ }}
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="#{{ item.uri }}">{{ item.name }}</a>
+                    </li>
+                    {{# }else{ }}
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:">{{ item.name }}</a>
+                        <dl class="layui-nav-child">
+                            {{# layui.each(item.permissions, function(index, subitem){ }}
+                            <dd><a href="#{{subitem.uri}}">{{subitem.name}}</a></dd>
+                            {{# }); }}
+                        </dl>
+                    </li>
+                    {{# }; }}
+                    {{# }); }}
+                </ul>
+            </div>
+        </div>
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+        </div>
+        <div class="layui-footer layui-hide-xs">
+            <!-- 底部固定区域 -->
+            © devcxl
+        </div>
+    </div>
+</script>
+<script>
+    layui.config({
+        base: 'js/',
+        version: "v1.1"
+    }).use('app', layui.factory('app'));
+</script>
+</html>
+
+

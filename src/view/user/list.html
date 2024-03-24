@@ -1,0 +1,54 @@
+<div class="layui-fluid">
+    <div class="layui-card" style="margin-top: 10px;">
+        <div class="layui-form layui-card-header" lay-filter="user-search-form" style="padding-top: 10px">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <input type="text" name="username" placeholder="姓名" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <input type="text" name="phone" placeholder="手机" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <input type="text" name="workPhone" placeholder="工作手机" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <select name="state" lay-verify="">
+                            <option value="">请选择状态</option>
+                            <option value="1">在职</option>
+                            <option value="0">离职</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn" lay-submit lay-filter="users-search">模糊搜索</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-card-body">
+            <table id="users-table" lay-filter="users-table"></table>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="user-tools">
+    <div class="layui-inline" title="点击重置" lay-event="Re"><i class="layui-icon">&#xe669;</i></div>
+    <div class="layui-inline" title="添加" lay-event="add"><i class="layui-icon">&#xe624;</i></div>
+    <div class="layui-inline" data-tip="人员管理 ,管理处理工单的人员
+<br> <span style='color: red'>详细</span> 查看人员信息
+<br> <span style='color: red'>编辑</span> 编辑人员信息
+<br> <span style='color: red'>角色</span> 为人员分配角色
+<br> <span style='color: red'>删除</span> 删除人员
+
+"><i class="layui-icon">&#xe702;</i></div>
+</script>
+<script>
+    layui.use('user', layui.factory('user'))
+</script>
+

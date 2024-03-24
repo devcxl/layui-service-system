@@ -1,0 +1,49 @@
+<div class="layui-fluid">
+    <div class="layui-card" style="margin-top: 10px;">
+        <div class="layui-form layui-card-header" lay-filter="customers-form" style="padding-top: 10px">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <input type="text" name="name" placeholder="公司名" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <input type="text" name="phone" placeholder="负责人手机号" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <select name="status">
+                            <option value="">请选择状态</option>
+                            <option value="0">未审核</option>
+                            <option value="1">已审核</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline" >
+                    <div class="layui-input-inline" >
+                        <input type="checkbox" name="filterDate" value="true" lay-skin="switch" lay-text="开启|关闭" >
+                        <i class="layui-icon layui-icon-tips" data-tip="到期模式查询开关 只查到期的"></i>
+                    </div>
+                </div>
+
+                <div class="layui-inline">
+                    <button class="layui-btn" lay-submit lay-filter="customers-search">模糊搜索</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-card-body">
+            <table id="customers-table" lay-filter="customers-table"></table>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="customers-tools">
+    <div class="layui-inline" title="点击刷新" lay-event="Re"><i class="layui-icon">&#xe669;</i></div>
+    <div class="layui-inline" title="添加" lay-event="add"><i class="layui-icon">&#xe624;</i></div>
+</script>
+<script>
+    layui.use('company',layui.factory('company'))
+</script>

@@ -1,0 +1,30 @@
+<!--
+Created By devcxl
+Date: 2020/7/17 下午2:38
+-->
+<div class="layui-form" lay-filter="roles-view-from" style="margin-top: 30px">
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">角色名</label>
+        <div class="layui-input-inline">
+            <input type="text" name="name" required lay-verify="required" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">排序</label>
+        <div class="layui-input-inline">
+            <input type="text" name="sort" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">描述</label>
+        <div class="layui-input-block">
+            <textarea name="description" class="layui-textarea" style="width: 190px"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item" id="roles-form-div-submit">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="roles-add">立即提交</button>
+        </div>
+    </div>
+</div>

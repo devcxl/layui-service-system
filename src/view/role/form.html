@@ -1,0 +1,55 @@
+<!--
+Created By devcxl
+Date: 2020/5/22 下午6:55
+-->
+
+<div class="">
+    <div class="layui-form" lay-filter="roles-view-from" style="margin-top: 30px;margin-bottom: 30px">
+
+        <div class="layui-row" >
+
+            <div class="layui-col-xs8">
+                <table class="layui-table" lay-size="sm" id="role-per" style="width: 700px;margin: 0 auto"></table>
+            </div>
+            <div class="layui-col-xs4">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">ID</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="id" autocomplete="off" class="layui-input" disabled>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">角色名</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="name" required lay-verify="required" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">排序</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="sort" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+
+                    <label class="layui-form-label">创建时间</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="createTime" id="createTime" required lay-verify="required" autocomplete="off"
+                               class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">描述</label>
+                    <div class="layui-input-block">
+                        <textarea name="description" class="layui-textarea" style="width: 190px"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item" id="roles-form-div-submit">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="roles-update">立即提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

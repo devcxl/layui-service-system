@@ -1,0 +1,30 @@
+<!--
+Created By devcxl
+Date: 2020/5/22 下午6:55
+-->
+<div class="layui-form" lay-filter="workOrder_select" style="margin-top: 30px">
+    <div class="layui-form-item">
+        <label class="layui-form-label">分配</label>
+        <div class="layui-input-inline">
+            <select class="layui-select" name="handler" required id="handler">
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">处理方式</label>
+        <div class="layui-input-inline">
+            <select class="layui-select" required name="handlerType" >
+                <option value="">请选择处理方式</option>
+                <option value="0">远程</option>
+                <option value="1">上门</option>
+                <option value="2">电话</option>
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="wk_select">立即提交</button>
+        </div>
+    </div>
+</div>
+

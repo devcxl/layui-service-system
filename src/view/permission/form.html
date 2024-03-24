@@ -1,0 +1,78 @@
+<!--
+Created By devcxl
+Date: 2020/5/22 下午6:55
+-->
+
+<div class="layui-form" lay-filter="permission-view-from" style="margin-top: 30px">
+    <div class="layui-form-item">
+        <label class="layui-form-label">ID</label>
+        <div class="layui-input-inline">
+            <label for="id"></label><input type="text" name="id" id="id" autocomplete="off" class="layui-input">
+        </div>
+        <label class="layui-form-label">名称</label>
+        <div class="layui-input-inline">
+            <label>
+                <input type="text" name="name" required lay-verify="required" autocomplete="off" class="layui-input">
+            </label>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">父id</label>
+        <div class="layui-input-inline">
+            <label>
+                <input type="text" name="pid" required lay-verify="required|pid" autocomplete="off" class="layui-input">
+            </label>
+        </div>
+        <label class="layui-form-label">路径</label>
+        <div class="layui-input-inline">
+            <label>
+                <input type="text" name="uri" required lay-verify="required" autocomplete="off" class="layui-input">
+            </label>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">类型</label>
+        <div class="layui-input-inline">
+            <label>
+                <select class="layui-select" name="type" lay-verify="required" required lay-filter="select_type">
+                    <option></option>
+                    <option value="0">菜单</option>
+                    <option value="1">菜单项</option>
+                    <option value="2">接口</option>
+                </select>
+            </label>
+        </div>
+
+        <label class="layui-form-label">值</label>
+        <div class="layui-input-inline">
+            <label>
+                <input type="text" name="value" autocomplete="off" class="layui-input">
+            </label>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">添加时间</label>
+        <div class="layui-input-inline">
+            <label>
+                <input type="text" name="createTime" autocomplete="off" class="layui-input" disabled>
+            </label>
+        </div>
+
+        <label class="layui-form-label">排序</label>
+        <div class="layui-input-inline">
+            <label>
+                <input type="number" name="sort" autocomplete="off" class="layui-input">
+            </label>
+        </div>
+    </div>
+
+    <div class="layui-form-item" id="admins-form-div-submit">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="permission-submit">立即提交</button>
+        </div>
+    </div>
+
+
+</div>

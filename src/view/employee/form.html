@@ -1,0 +1,52 @@
+<form class="layui-form" lay-filter="employee-view-from" style="margin-top: 10px">
+    <div class="layui-form-item">
+        <label class="layui-form-label">姓名</label>
+        <div class="layui-input-inline">
+            <input type="hidden" name="id" >
+            <input type="text" name="name"  required lay-verify="required"  autocomplete="off" class="layui-input" disabled>
+        </div>
+        <label class="layui-form-label">手机</label>
+        <div class="layui-input-inline">
+            <input type="text" name="phone"   required lay-verify="required|phone" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">威信</label>
+        <div class="layui-input-inline">
+            <input type="text" name="wechat" required lay-verify="required" autocomplete="off" class="layui-input">
+        </div>
+        <label class="layui-form-label">部门</label>
+        <div class="layui-input-inline">
+            <input type="text" name="dept" required lay-verify="required" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">岗位</label>
+        <div class="layui-input-inline">
+            <input type="text" name="job" required lay-verify="required" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    
+    <div class="layui-form-item" >
+        <label class="layui-form-label" >审核状态</label>
+        <div class="layui-input-inline">
+            <select  id="status" class="layui-select" type="text" name="status">
+                <option value="0">未审核</option>
+                <option value="1">已审核</option>
+            </select>
+        </div>
+        <label class="layui-form-label">角色</label>
+        <div class="layui-input-inline">
+                <select name="roleId" lay-verify="">
+                    <option value="4">管理</option>
+                    <option value="5">普通</option>
+                </select>
+        </div>
+    </div>
+    <div class="layui-form-item" id="employee-form-div-submit">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="employee-update">立即提交</button>
+        </div>
+    </div>
+</form>

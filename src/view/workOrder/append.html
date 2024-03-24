@@ -1,0 +1,24 @@
+<div class="layui-form" lay-filter="workOrder-view-from" style="margin-top: 10px">
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">标题</label>
+        <div class="layui-input-block">
+            <input type="hidden" name="id">
+            <input style="width: 820px" type="text" name="title" required lay-verify="required" autocomplete="off"
+                class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">内容</label>
+        <div class="layui-input-block">
+            <textarea style="width: 820px" name="content" id="content" required class="layui-textarea"></textarea>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block" id="workOrder-form-div-submit">
+            <button class="layui-btn" lay-submit lay-filter="workOrder-update">立即提交</button>
+        </div>
+    </div>
+</div>

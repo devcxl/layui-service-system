@@ -1,0 +1,44 @@
+<div class="layui-fluid">
+    <div class="layui-card" style="margin-top: 10px;">
+        <div class="layui-form" lay-filter="wko-add-form" style="padding: 20px">
+            <div class="layui-form-item">
+                <label class="layui-form-label">产品</label>
+                <div class="layui-input-block">
+                    <label for="productId"></label><select class="layui-select" name="productId" id="productId"
+                        lay-search>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">工单标题</label>
+                <div class="layui-input-block">
+                    <label>
+                        <input type="text" name="title" placeholder="简要信息精准的分配" required lay-verify="required"
+                            autocomplete="off" class="layui-input">
+                    </label>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">问题内容</label>
+                <div class="layui-input-block">
+                    <label>
+                        <textarea id="addTR" type="text" name="content" required class="layui-textarea"></textarea>
+                    </label>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="workOrderAdd">立即提交</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<script>
+    layui.use('work_order_add', layui.factory('work_order_add'))
+</script>

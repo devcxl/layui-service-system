@@ -1,0 +1,89 @@
+<div class="layui-fluid">
+    <div class="layui-card" style="margin-top: 10px;">
+        <div class="layui-form layui-card-header" lay-filter="uTotal-search-form" style="padding-top: 10px">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <input autocomplete="off" class="layui-input" id="startTime" lay-verify="required"
+                               name="startTime"
+                               placeholder="开始时间" required
+                               type="text">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <input autocomplete="off" class="layui-input" id="endTime" lay-verify="required" name="endTime"
+                               placeholder="结束时间"
+                               required
+                               type="text">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <select autocomplete="off" class="layui-form-select" id="company_select" lay-search
+                                lay-verify="required"
+                                name="companyId" required></select>
+                    </div>
+                </div>
+
+                <div class="layui-inline">
+                    <button class="layui-btn" lay-filter="uTotals-search" lay-submit>查询</button>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn" id="result"></button>
+                </div>
+            </div>
+        </div>
+        <table id="test11"></table>
+
+    </div>
+</div>
+
+<script>
+    layui.use(['laydate', 'select', 'api', 'form', "jquery", 'table'], function () {
+        let laydate = layui.laydate;
+        let select = layui.select;
+        let api = layui.api;
+        let form = layui.form;
+        let $ = layui.jquery;
+        let table = layui.table;
+        laydate.render({
+            elem: '#startTime',
+            format: 'yyyy/MM/dd'
+        });
+
+        laydate.render({
+            elem: '#endTime',
+            format: 'yyyy/MM/dd'
+        });
+
+        select.render("#company_select", api.company.all, "id", "name")
+
+        //搜索
+        form.on('submit(uTotals-search)', function (data) {
+
+            let where = {"startTime": "2021/01/01 ", "endTime": "2021/08/01 ", "companyId": 10};
+            where.startTime = data.field.startTime;
+            where.endTime = data.field.endTime;
+            where.companyId = data.field.companyId;
+            table.render({
+                elem: '#test11',
+                url: "/api/workOrder/cTotal",
+                page: false,
+                cols: [[
+                    {field: 'companyName', title: '公司', align: 'center'},
+                    {field: 'employeeName', title: '创建人', align: 'center'},
+                    {field: 'userName', title: '处理人', align: 'center'},
+                    {field: 'total', title: '工单数量', align: 'center'}
+                ]],
+                height: 'full-210'
+                , where: where,
+                done: function (res, page, count) {
+                    $("#result").html("共 " + res.count + " 条已经完成工单")
+                }
+            });
+            return false;
+        })
+    })
+</script>
+

@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="../style/login.css"/>
+<div class="login ">
+    <div class="main">
+        <div class="box header layui-anim layui-anim-scale">
+            <h2>服务系统</h2>
+            <p>找回密码</p>
+        </div>
+
+        <!--        获取验证码部分-->
+        <div id="forget" class="box body layui-form layui-anim layui-anim-scale">
+            <div class="layui-form-item">
+                <label class="login-icon layui-icon layui-icon-username"></label>
+                <select name="cId" id="FORGET_CompanyName" class="layui-form-select" lay-search> </select>
+            </div>
+            <div class="layui-form-item">
+                <label class="login-icon layui-icon layui-icon-cellphone"></label>
+                <input type="text" name="phone" id="phone" required lay-verify="required|phone" placeholder="注册时手机号"
+                       class="layui-input">
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-row">
+                    <div class="layui-col-xs7">
+                        <label class="login-icon layui-icon layui-icon-vercode"></label>
+                        <input type="text" name="vPhoneCode" lay-verify="required" placeholder="验证码"
+                               class="layui-input">
+                    </div>
+                    <div class="layui-col-xs5">
+                        <div style="margin-left: 10px;">
+                            <button type="button" class="layui-btn layui-btn-primary layui-btn-fluid" id="get_sms_code">
+                                获取验证码
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="forget_submit">找回密码</button>
+            </div>
+            <div class="layui-trans layui-form-item login-other">
+                <a  href="#/login" class="jump-change layadmin-link layui-hide-xs">用已有帐号登入</a>
+            </div>
+        </div>
+        <!--        修改密码-->
+        <div id="repass" class="box body layui-form layui-anim layui-anim-scale" style="display: none">
+            <div class="layui-form-item">
+                <label class="login-icon layui-icon layui-icon-password"></label>
+                <input type="text" name="password" id="password" required lay-verify="required" placeholder="密码"
+                       class="layui-input">
+            </div>
+            <div class="layui-form-item">
+                <label class="login-icon layui-icon layui-icon-password"></label>
+                <input type="text" name="rePassword" id="rePassword" required lay-verify="required" placeholder="确认密码"
+                       class="layui-input">
+            </div>
+            <div class="layui-form-item">
+                <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="repass_submit">提交</button>
+            </div>
+        </div>
+    </div>
+    <div class="layui-trans login-footer">
+        <p>© 2020 <a href="javascript:;">版权所有</a></p>
+    </div>
+</div>
+<script>
+    layui.use('forget',layui.factory('forget'))
+</script>

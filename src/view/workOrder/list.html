@@ -1,0 +1,112 @@
+<!--
+Created By devcxl
+Date: 2020/5/22 下午6:55
+-->
+<div class="layui-fluid">
+    <div class="layui-card" style="margin-top: 10px;">
+        <div class="layui-form layui-card-header" lay-filter="workOrder-search-form" style="padding-top: 10px">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <label for="orderSn"></label><input type="text" name="orderSn" id="orderSn" placeholder="工单号码" autocomplete="off"
+                                                            class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <label for="cId"></label><select autocomplete="off" class="layui-select" id="cId" lay-search
+                                                         name="companyId">
+                    </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <label for="managerId"></label><select autocomplete="off" class="layui-select" id="managerId"
+                                                               lay-search name="managerId">
+                    </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <label for="handleId"></label><select autocomplete="off" class="layui-select" id="handleId"
+                                                              lay-search name="handleId">
+                    </select>
+                    </div>
+                </div>
+
+
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <label>
+                            <select name="state" lay-verify="">
+                                <option value="">请选择状态</option>
+                                <option value="0">未分配</option>
+                                <option value="1">已分配</option>
+                                <option value="2">处理中</option>
+                                <option value="3">处理完成</option>
+                                <option value="4">已归档</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <label>
+                            <select name="handleType" lay-verify="">
+                                <option value="">请选择处理方式</option>
+                                <option value="0">远程</option>
+                                <option value="1">上门</option>
+                                <option value="2">电话</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="layui-inline">
+                    <button class="layui-btn" lay-submit lay-filter="workOrder-search">模糊搜索</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-card-body">
+            <table id="workOrder-table" lay-filter="workOrder-table" lay-size="sm"></table>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="workOrder-tools">
+    <div class="layui-inline" title="点击重置" lay-event="Reload"><i class="layui-icon">&#xe669;</i></div>
+    <div class="layui-inline" title="批量上传" lay-event="Upload"><i class="layui-icon">&#xe62f;</i></div>
+</script>
+<script type="text/html" id="template">
+    {{# let api = layui.api; }}
+    <a class="layui-btn layui-btn-xs" lay-event="info">详细</a>
+    {{#  if(sessionStorage.getItem(api.workOrder.dist)){ }}
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="dist">分配</a>
+    {{#  } }}
+    {{#  if(sessionStorage.getItem(api.workOrder.handler)){ }}
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="handle">处理</a>
+    {{#  } }}
+    {{#  if(sessionStorage.getItem(api.workOrder.append)){ }}
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="append">补充</a>
+    {{#  } }}
+    {{#  if(sessionStorage.getItem(api.workOrder.handlerDone)){ }}
+    <a class="layui-btn layui-btn-xs" lay-event="handlerDone">处理完成</a>
+    {{#  } }}
+    {{#  if(sessionStorage.getItem(api.workOrder.del)){ }}
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    {{#  } }}
+    {{#  if(sessionStorage.getItem(api.workOrder.appraise)&&d.state==="处理完成"){ }}
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="appraise">评价</a>
+    {{#  } }}
+    {{#  if(sessionStorage.getItem(api.workOrder.done)&&d.state==="已评价"){ }}
+    <a class="layui-btn layui-btn-xs" lay-event="done">完成</a>
+    {{#  } }}
+    {{# if(sessionStorage.getItem(api.workOrder.upload) && d.upload === "未上传" && d.state==="完成"){ }}
+    <a class="layui-btn layui-btn-warm layui-btn-xs" lay-event="upload">上传</a>
+    {{#  } }}
+</script>
+<script>
+    layui.use('work_order', layui.factory('work_order'));
+</script>

@@ -1,0 +1,148 @@
+<div class="layui-form" lay-filter="workOrder-view-from" style="margin-top: 30px">
+    <div class="layui-form-item">
+        <label class="layui-form-label">工单号</label>
+        <div class="layui-input-inline">
+            <input type="text" name="orderSn" autocomplete="off" class="layui-input" disabled>
+        </div>
+
+        <div class="layui-inline">
+            <label class="layui-form-label">状态(进度)</label>
+            <div class="layui-input-inline">
+                <input name="state" class="layui-input"/>
+            </div>
+        </div>
+
+
+        <div class="layui-inline">
+            <label class="layui-form-label">处理方式</label>
+            <div class="layui-input-inline">
+                <input name="handlerType" class="layui-input"/>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">公司</label>
+        <div class="layui-input-inline">
+            <input name="companyName" id="companyName" required class="layui-input"></input>
+        </div>
+
+        <label class="layui-form-label">产品</label>
+        <div class="layui-input-inline">
+            <input type="text" name="productName" id="product" autocomplete="off" class="layui-input">
+        </div>
+
+        <label class="layui-form-label">提交时间</label>
+        <div class="layui-input-inline">
+            <input type="text" name="submitTime" disabled autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">联系人</label>
+        <div class="layui-input-inline">
+            <input type="text" name="employeeName" id="employeeName" required lay-verify="required" autocomplete="off"
+                   class="layui-input">
+        </div>
+        <label class="layui-form-label">联系电话</label>
+        <div class="layui-input-inline">
+            <input type="text" name="employeePhone" id="employeePhone" autocomplete="off" class="layui-input">
+        </div>
+        <label class="layui-form-label">部门</label>
+        <div class="layui-input-inline">
+            <input type="text" name="employeeDept" id="employeeDept" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">标题</label>
+        <div class="layui-input-block">
+            <input style="width: 820px" type="text" name="title" required lay-verify="required" autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">内容</label>
+        <div class="layui-input-block">
+            <div style="width: 820px" id="content"  class="layui-textarea"></div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">经理</label>
+        <div class="layui-input-inline">
+            <input type="text" name="managerName" id="managerName" autocomplete="off" class="layui-input">
+        </div>
+
+        <label class="layui-form-label">经理电话</label>
+        <div class="layui-input-inline">
+            <input type="text" name="managePhone" id="managePhone" autocomplete="off" class="layui-input">
+        </div>
+
+        <label class="layui-form-label">分配时间</label>
+        <div class="layui-input-inline">
+            <input type="text" name="assignTime" disabled autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">处理人</label>
+        <div class="layui-input-inline">
+            <input type="text" name="handlerName" id="handlerName" required lay-verify="required" autocomplete="off"
+                   class="layui-input">
+        </div>
+
+        <label class="layui-form-label">处理人电话</label>
+        <div class="layui-input-inline">
+            <input type="text" name="handlerPhone" id="handlerPhone" required lay-verify="required" autocomplete="off"
+                   class="layui-input">
+        </div>
+        <label class="layui-form-label">处理时间</label>
+        <div class="layui-input-inline">
+            <input type="text" name="handlerTime" disabled autocomplete="off" class="layui-input">
+        </div>
+
+
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">解决方案</label>
+        <div class="layui-input-block">
+            <div style="width: 820px"  id="solution"    class="layui-textarea"></div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">评价</label>
+        <div class="layui-input-inline">
+            <input type="text" name="evaluate" disabled autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-input-inline">
+            <input autocomplete="off" class="layui-input" disabled name="evaluateDes" type="text">
+        </div>
+
+        <label class="layui-form-label">完成时间</label>
+        <div class="layui-input-inline">
+            <input type="text" name="doneTime" disabled autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">上传状态</label>
+        <div class="layui-input-inline">
+            <input type="checkbox" name="isUpload" lay-filter="isUpload" value="1" lay-skin="switch" lay-text="已|未">
+        </div>
+
+        <label class="layui-form-label">归档时间</label>
+        <div class="layui-input-inline">
+            <input type="text" name="uploadTime" disabled autocomplete="off" class="layui-input">
+        </div>
+        <label class="layui-form-label"> .</label>
+        <div class="layui-input-inline" id="workOrder-form-div-submit">
+            <button class="layui-btn" lay-submit lay-filter="workOrder-update">立即提交</button>
+        </div>
+    </div>
+
+</div>

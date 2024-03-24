@@ -1,0 +1,38 @@
+<style>
+    .layui-form {
+        margin-top: 20px
+    }
+</style>
+<div class="layui-form" lay-filter="repass">
+    <div class="layui-form-item">
+        <label class="layui-form-label">现在密码</label>
+        <div class="layui-input-inline">
+            <input type="password" name="password" required lay-verify="required" autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">密码</label>
+        <div class="layui-input-inline">
+            <input type="hidden" name="id">
+            <input type="password" name="newPassword" required lay-verify="required" autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">确认密码</label>
+        <div class="layui-input-inline">
+            <input type="hidden" name="id">
+            <input type="password" name="AgainPassword" required lay-verify="required" autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="repass-submit">立即提交</button>
+        </div>
+    </div>
+</div>
+<script>
+    layui.use('repass',layui.factory('repass'))
+</script>

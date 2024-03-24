@@ -1,0 +1,59 @@
+
+<div class="layui-form" lay-filter="users-view-from" style="margin-top: 30px">
+    <div class="layui-form-item">
+        <label class="layui-form-label">工号</label>
+        <div class="layui-input-inline">
+            <input type="text" name="id" autocomplete="off" class="layui-input" disabled>
+        </div>
+        <label class="layui-form-label">姓名</label>
+        <div class="layui-input-inline">
+            <input type="text" name="username" required lay-verify="required|username" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">手机号</label>
+        <div class="layui-input-inline">
+            <input type="text" name="phone" required lay-verify="required|lxfs" autocomplete="off" class="layui-input">
+        </div>
+        <label class="layui-form-label">工作电话</label>
+        <div class="layui-input-inline">
+            <input type="text" name="workPhone" required lay-verify="required|lxfs" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+
+        <label class="layui-form-label">微信号</label>
+        <div class="layui-input-inline">
+            <input type="text" name="wchatNum" required lay-verify="required" autocomplete="off" class="layui-input">
+        </div>
+        <label class="layui-form-label">性别</label>
+        <div class="layui-input-inline">
+            <input type="radio" name="gender" value="1" title="男">
+            <input type="radio" name="gender" value="0" title="女">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">入职时间</label>
+        <div class="layui-input-inline">
+            <input type="text" name="entryTime" id="entryTime" required lay-verify="required" autocomplete="off"
+                   class="layui-input">
+        </div>
+        <label class="layui-form-label">入职状态</label>
+        <div class="layui-input-inline">
+            <select name="state" class="layui-select">
+                <option value="1">在职</option>
+                <option value="0">离职</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="layui-form-item" id="users-form-div-submit">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="users-update">立即提交</button>
+        </div>
+    </div>
+
+
+</div>

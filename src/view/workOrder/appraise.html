@@ -1,0 +1,28 @@
+<!--
+Created By devcxl
+Date: 2020/5/22 下午6:55
+-->
+<div class="layui-form" lay-filter="workOrder-appraise-from" style="margin-top: 30px">
+    <div class="layui-form-item">
+        <label class="layui-form-label">评价等级</label>
+        <div class="layui-input-inline">
+            <select class="layui-select" name="evaluate" required id="evaluate">
+                <option value="0">很好</option>
+                <option value="1">好</option>
+                <option value="2">一般</option>
+                <option value="3">差</option>
+                <option value="4">很差</option>
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">评价内容</label>
+        <textarea name="evaluateDes"></textarea>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="workOrder-appraise">立即提交</button>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,53 @@
+<!--后台人员控制台-->
+<link href="style/console.css" rel="stylesheet">
+<div class="layui-fluid">
+    <div class="cart layui-bg-blue" data-url="/api/workOrder/total" data-where='{}' data-href="#/workOrder/list">
+        <div class="num">-1</div>
+        <div class="tip" data-tip="本月我的工单总数量">工单总数量</div>
+    </div>
+    <div class="cart layui-bg-orange" data-url="/api/workOrder/total" data-where='{"state":"1"}'>
+        <div class="num">-1</div>
+        <div class="tip" data-tip="本月我的工单未完成数量">工单待处理</div>
+    </div>
+    <div class="cart layui-bg-cyan" data-url="/api/workOrder/total" data-where='{"state":"2"}'>
+        <div class="num">-1</div>
+        <div class="tip" data-tip="本月我的工单已经完成数量">工单处理中</div>
+    </div>
+    <div class="cart layui-bg-gray" data-url="/api/workOrder/total" data-where='{"state":"3"}'>
+        <div class="num">-1</div>
+        <div class="tip" data-tip="本月我的工单处理完成总计">工单处理完成</div>
+    </div>
+    <div class="cart layui-bg-red" data-url="/api/workOrder/total" data-where='{"state":"5"}'>
+        <div class="num">-1</div>
+        <div class="tip" data-tip="本月我的工单完成总数量">工单完成</div>
+    </div>
+
+</div>
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-col-xs6 layui-col-sm6 layui-col-md8">
+            <div class="layui-card">
+                <div class="layui-card-header">我的新增加工单</div>
+                <div class="layui-card-body">
+                    <table class="layui-table" id="my">
+
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+<!--            <div class="layui-card">-->
+<!--                <div class="layui-card-header" data-tip="每月处理完成工单的数量">月度排行榜</div>-->
+<!--                <div class="layui-card-body">-->
+<!--                    <table class="layui-table" id="rankUser">-->
+
+<!--                    </table>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+</div>
+<script>
+    layui.use('console', layui.factory('console'))
+</script>

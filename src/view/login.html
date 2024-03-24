@@ -1,0 +1,66 @@
+<!--
+Created By devcxl
+Date: 2020/5/16 下午6:19
+-->
+<link rel="stylesheet" href="../style/login.css"/>
+<div class="login" id="loginPage" style="display: none">
+
+    <div class="main">
+        <div class="box header layui-anim layui-anim-scale">
+            <h2>服务系统</h2>
+            <p>用户登陆</p>
+        </div>
+        <div class="box body layui-form layui-anim layui-anim-scale">
+
+            <div class="layui-form-item">
+                <label class="login-icon layui-icon layui-icon-username"></label>
+                <input type="text" name="phone" lay-verify="required" placeholder="手机号" class="layui-input"
+                       autocomplete="off">
+            </div>
+            <!-- 密码-->
+            <div class="layui-form-item">
+                <label class="login-icon layui-icon layui-icon-password"></label>
+                <input type="password" name="password" lay-verify="required" placeholder="密码" class="layui-input"
+                       autocomplete="off">
+            </div>
+
+            <!--  验证码-->
+            <div class="layui-form-item">
+                <div class="layui-row">
+                    <div class="layui-col-xs7">
+                        <label class="login-icon layui-icon layui-icon-vercode"></label>
+                        <input type="text" name="vCode" placeholder="图形验证码" class="layui-input" autocomplete="off">
+                    </div>
+                    <div class="layui-col-xs5" tip="点击更换验证码">
+                        <div style="margin-left: 10px;">
+                            <img src="" class="login-codeimg" id="ImageCaptcha">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-form-item" style="margin-bottom: 20px;">
+                <input type="checkbox" name="is_admin" lay-skin="primary" title="管理登陆">
+                <a href="#/forget" href="javascript:;" class="jump-change" style="margin-top: 7px;">忘记密码？</a>
+            </div>
+            <div class="layui-form-item">
+                <button id="login-submit" class="layui-btn layui-btn-fluid" lay-submit lay-filter="LoginForm">登 入
+                </button>
+            </div>
+            <div class="layui-trans layui-form-item login-other">
+                <label>其他方式登录</label>
+                <a href="javascript:;" data-tip="此功能正在开发中"><i class="layui-icon layui-icon-login-wechat"></i></a>
+                <a href="#/reg" href="javascript:;" class="jump-change ">注册帐号</a>
+                <a href="#/join" href="javascript:;" class="jump-change ">公司入驻</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-trans login-footer">
+        <p>© 2020 <a href="javascript:;">版权所有</a></p>
+    </div>
+
+</div>
+<script>
+    layui.use('login',layui.factory('login'))
+</script>

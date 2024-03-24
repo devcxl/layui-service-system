@@ -1,0 +1,81 @@
+<form class="layui-form" lay-filter="customers-view-from" style="margin-top: 10px">
+    <div class="layui-form-item">
+        <label class="layui-form-label">ID</label>
+        <div class="layui-input-inline">
+            <input type="text" name="id" autocomplete="off" class="layui-input" disabled>
+        </div>
+        <label class="layui-form-label">公司</label>
+        <div class="layui-input-inline">
+            <input type="text" name="name" id="name" required lay-verify="required" autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">手机号</label>
+        <div class="layui-input-inline">
+            <input type="text" name="phone" required lay-verify="required|lxfs" autocomplete="off" class="layui-input">
+        </div>
+        <label class="layui-form-label">公司地址</label>
+        <div class="layui-input-inline">
+            <input type="text" name="address" required lay-verify="required" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">负责人</label>
+        <div class="layui-input-inline">
+            <input type="text" name="linkman" required lay-verify="required" autocomplete="off" class="layui-input">
+        </div>
+        <label class="layui-form-label">专属顾问</label>
+        <div class="layui-input-inline">
+            <div class="layui-inline">
+                <div class="layui-input-inline">
+                    <select name="ecUserId" id="ecUserId" class="layui-select"> </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+
+        <label class="layui-form-label">备注</label>
+        <div class="layui-input-inline">
+            <input type="text" name="remarks" autocomplete="off" class="layui-input">
+        </div>
+
+        <label class="layui-form-label">VIP</label>
+        <div class="layui-input-inline">
+            <select name="vip" class="layui-select">
+                <option value="0">非VIP</option>
+                <option value="1">VIP</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">注册时间</label>
+        <div class="layui-input-inline">
+            <input type="text" name="regTime" id="regTime" autocomplete="off" class="layui-input" disabled>
+        </div>
+        <label class="layui-form-label">服务到期日</label>
+        <div class="layui-input-inline">
+            <input type="text" name="serviceTime" id="serviceTime" required autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item" id="status">
+        <label class="layui-form-label">审核状态</label>
+        <div class="layui-input-inline">
+            <select name="state" class="layui-select">
+                <option value="0">未审核</option>
+                <option value="1">已审核</option>
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item" id="customers-form-div-submit">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="customers-update">立即提交</button>
+        </div>
+    </div>
+</form>

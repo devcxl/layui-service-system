@@ -1,0 +1,65 @@
+<div class="layui-fluid">
+    <div class="layui-card" style="margin-top: 10px;">
+        <div class="layui-form layui-card-header" lay-filter="employee-form" style="padding-top: 10px">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <label for="company_select"></label><select type="text" name="cId" id="company_select"
+                                                                    autocomplete="off"
+                                                                    class="layui-form-select" lay-search></select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <label>
+                            <input type="text" name="name" placeholder="姓名" autocomplete="off" class="layui-input">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <label>
+                            <input type="text" name="phone" placeholder="手机" autocomplete="off" class="layui-input">
+                        </label>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <label>
+                            <select name="status">
+                                <option value="">请选择状态</option>
+                                <option value="0">未审核</option>
+                                <option value="1">已审核</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="layui-inline">
+                    <button class="layui-btn" lay-submit lay-filter="employee-search">模糊搜索</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-card-body">
+            <table id="employee-table" lay-filter="employee-table"></table>
+        </div>
+    </div>
+</div>
+<script type="text/html" id="employee-tools">
+    <div class="layui-inline" title="点击刷新" lay-event="Reload"><i class="layui-icon">&#xe669;</i></div>
+</script>
+<script type="text/html" id="template">
+    {{# let api = layui.api}}
+    <a class="layui-btn layui-btn-xs" lay-event="info">详细</a>
+    {{#  if(sessionStorage.getItem(api.employee.update)){ }}
+    <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit">编辑</a>
+    {{#  } }}
+    {{#  if(sessionStorage.getItem(api.employee.del)){ }}
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    {{#  } }}
+</script>
+<script>
+    layui.use('employee', layui.factory('employee'))
+</script>

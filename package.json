@@ -1,0 +1,18 @@
+{
+  "name": "layui-service-system",
+  "description": "layui-service-system",
+  "version": "1.0.0",
+  "author": [
+    "devcxl"
+  ],
+  "devDependencies": {
+    "@babel/core": "",
+    "@babel/preset-env": "",
+    "babel-loader": "^7.1.5",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-uglify": "^3.0.2"
+  }
+}

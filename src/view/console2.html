@@ -1,0 +1,72 @@
+<!--超级管理控制台-->
+<link href="style/console.css" rel="stylesheet">
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="cart layui-bg-blue" data-url="/api/company/total" data-href="#/company/list">
+            <div class="num">-1</div>
+            <div class="tip" data-tip="公司总数量 包括未经审核的公司">公司总数量</div>
+        </div>
+        <div class="cart layui-bg-orange" data-url="/api/company/total" data-where='{"status":"0"}'
+             data-href="#/company/list">
+            <div class="num">-1</div>
+            <div class="tip" data-tip="未审核公司的数量">未审核公司</div>
+        </div>
+        <div class="cart layui-bg-cyan" data-url="/api/company/total" data-where='{"filterDate":"true"}'
+             data-href="#/company/list">
+            <div class="num">-1</div>
+            <div class="tip" data-tip="已到期公司">已到期公司</div>
+        </div>
+        <div class="cart layui-bg-gray" data-url="/api/employee/total" data-where='{"status":"1"}'
+             data-href="#/employee/list">
+            <div class="num">-1</div>
+            <div class="tip" data-tip="外部人员在职">外部人员在职</div>
+        </div>
+        <div class="cart layui-bg-green" data-url="/api/user/total" data-where='{"state":"1"}' data-href="#/user/list">
+            <div class="num">-1</div>
+            <div class="tip" data-tip="后台用户在职">后台用户在职</div>
+        </div>
+        <div class="cart layui-bg-red" data-url="/api/workOrder/total" data-where='{"state":"5"}'
+             data-href="#/workOrder/list">
+            <div class="num">-1</div>
+            <div class="tip" data-tip="未完成工单">未完成工单</div>
+        </div>
+    </div>
+</div>
+<div class="layui-fluid">
+    <div class="layui-row">
+        <div class="layui-col-xs6 layui-col-sm6 layui-col-md8">
+            <div class="layui-card">
+                <div class="layui-card-header">新增加工单</div>
+                <div class="layui-card-body">
+                    <table class="layui-table" id="wo">
+
+                    </table>
+                </div>
+            </div>
+            <div class="layui-card">
+                <div class="layui-card-header">新增公司</div>
+                <div class="layui-card-body">
+                    <table class="layui-table" id="company">
+
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header" data-tip="每月处理完成工单的数量">月度排行榜</div>
+                <div class="layui-card-body">
+                    <table class="layui-table" id="rankUser">
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    layui.use('console',layui.factory('console'))
+</script>
+  
+  

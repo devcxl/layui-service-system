@@ -1,0 +1,76 @@
+<!--suppress HtmlUnknownAnchorTarget -->
+<link rel="stylesheet" href="../style/login.css"/>
+<div class="login ">
+    <div class="main">
+        <div class="box header layui-anim layui-anim-scale">
+            <h2>服务系统</h2>
+            <p>公司入驻</p>
+        </div>
+        <div class="box body layui-form layui-anim layui-anim-scale">
+            <div class="layui-form-item">
+                <label class="login-icon layui-icon layui-icon-username"></label>
+                <label>
+                    <input type="text" name="name" lay-verify="required|companyName" placeholder="公司名称" class="layui-input"
+                           lay-filter="Join_companyName">
+                </label>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="login-icon layui-icon layui-icon-username"></label>
+                <label>
+                    <input type="text" name="linkman" required lay-verify="required|name" placeholder="负责人姓名"
+                           class="layui-input">
+                </label>
+            </div>
+            <div class="layui-form-item">
+                <label class="login-icon layui-icon layui-icon-cellphone"></label>
+                <label for="phone"></label><input type="text" name="phone" id="phone" required lay-verify="required|phone" placeholder="手机号码"
+                                                  class="layui-input">
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-row">
+                    <div class="layui-col-xs7">
+                        <label class="login-icon layui-icon layui-icon-vercode"></label>
+                        <label>
+                            <input type="text" name="vPhoneCode" lay-verify="required" placeholder="验证码"
+                                   class="layui-input">
+                        </label>
+                    </div>
+                    <div class="layui-col-xs5">
+                        <div style="margin-left: 10px;">
+                            <button type="button" class="layui-btn layui-btn-primary layui-btn-fluid" id="get_sms_code">
+                                获取验证码
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="login-icon layui-icon layui-icon-survey"></label>
+                <label>
+                    <input type="text" name="address" required lay-verify="required" placeholder="地址"
+                           class="layui-input">
+                </label>
+            </div>
+
+            <div class="layui-form-item">
+            </div>
+            <div class="layui-form-item">
+                <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="reg_submit_company">注 册</button>
+            </div>
+            <div class="layui-trans layui-form-item login-other">
+                <a href="#/login" class="jump-change layadmin-link layui-hide-xs">返回登录</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-trans login-footer">
+        <p>© 2020 <a href="javascript:">版权所有</a></p>
+    </div>
+
+</div>
+
+<script>
+    layui.use('join', layui.factory('join'))
+</script>
